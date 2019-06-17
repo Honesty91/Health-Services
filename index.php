@@ -80,7 +80,7 @@ for($i=0; $i<count($obj['data']); $i++) {
         $index = substr("$indexMarker",$targets,$targets);
         
         if($obj['data'][$i]["parentId"]== 0){
-            echo '<strong>'.$obj['data'][3]["category"]. '</strong>'."<BR>";
+            //echo '<strong>'.$obj['data'][3]["category"]. '</strong>'."<BR>";
             echo "==";
            
            echo $obj['data'][$i]["displayName"]."<BR>";
