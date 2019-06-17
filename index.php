@@ -6,9 +6,9 @@ Finish Time : Sunday 11:52 AM.
 */
 
 // Using the hard coded json data of target case-1
-//$json = file_get_contents('http://142.93.203.254:4200/test-case-1');
+$json = file_get_contents('http://142.93.203.254:4200/test-case-1');
  //= "";//142.93.203.254:4200/test-case-1';
-$json = '{"target":4,
+/*$json = '{"target":4,
     "data":[{
     "id":1,
     "displayName":"OPD",
@@ -42,7 +42,7 @@ $json = '{"target":4,
     "category":"Clinical","parentId":3}
     ]}
   ';
-
+*/
     // Decoding data from json file
 $obj = json_decode($json, TRUE);
 
@@ -62,7 +62,10 @@ for($i=0; $i<count($obj['data']); $i++) {
         $targets = ($obj['data'][$i]["parentId"])*3;
 
         $index = substr("$indexMarker",$targets,$targets);
+        
             if($obj['data'][$i]["parentId"]== 0){
+                
+                echo "==";
 // Assigning 2 "==" to the parent service.
             echo $obj['data'][$i]["displayName"]."<BR>";
             }else{  
@@ -80,7 +83,7 @@ for($i=0; $i<count($obj['data']); $i++) {
         $index = substr("$indexMarker",$targets,$targets);
         
         if($obj['data'][$i]["parentId"]== 0){
-            //echo '<strong>'.$obj['data'][3]["category"]. '</strong>'."<BR>";
+            echo '<strong>'.$obj['data'][3]["category"]. '</strong>'."<BR>";
             echo "==";
            
            echo $obj['data'][$i]["displayName"]."<BR>";
